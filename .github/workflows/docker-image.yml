@@ -20,6 +20,6 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: kevinpan45/graalvm21-python:0.0.2
-        username: ${{ secrets.DOCKER_HUB_USERNAME }}
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
