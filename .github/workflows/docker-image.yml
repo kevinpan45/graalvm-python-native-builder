@@ -19,6 +19,6 @@ jobs:
     - name: Push to Docker Hub
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: kevinpan45/iot-biz:latest
+        name: kevinpan45/graalvm21-python:0.0.2
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
