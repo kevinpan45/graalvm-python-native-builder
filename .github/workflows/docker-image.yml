@@ -22,3 +22,4 @@ jobs:
         name: kevinpan45/graalvm21-python:0.0.2
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        registry: ghcr.io
