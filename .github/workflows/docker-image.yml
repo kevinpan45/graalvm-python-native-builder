@@ -13,16 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker Build & Push Action
-      uses: mr-smithers-excellent/docker-build-push@v5.6
+    - name: Build image
+      run: docker build . --file Dockerfile --tag kevinpan45/graalvm21-python:0.0.2
+    - name: Push to Docker Hub
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        # Name of the Docker image
-        image: kevinpan45/graalvm21-python
-        # Tags override for Docker image
-        tags: 0.0.2
-        # Target Docker registry
-        registry: index.docker.io
-        # Docker registry username
+        name: kevinpan45/iot-biz:latest
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
-        # Docker registry password
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
